@@ -15,7 +15,7 @@ export function AmenitiesSection({ onOpenBooking }) {
       className="relative min-h-[92vh] w-full overflow-hidden bg-[#17233b] text-white flex flex-col justify-between border-b-[14px] border-[#340c24]"
     >
       <img
-        src="/images/hero-night.webp"
+        src="./images/hero-night.webp"
         alt="Kaze Sanctuary twilight thermal infinity pool and cedar pavilion"
         loading="lazy"
         className="absolute inset-0 w-full h-full object-cover parallax-img"

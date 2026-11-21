@@ -8,7 +8,7 @@ export function ArchitectureSection({ onOpenBooking }) {
       className="relative min-h-[95vh] w-full overflow-hidden bg-[#17233b] text-white flex flex-col justify-between"
     >
       <img
-        src="/images/architecture-facade.webp"
+        src="./images/architecture-facade.webp"
         alt="Stepped contemporary limestone and cedar architecture of Kaze Sanctuary"
         loading="lazy"
         className="absolute inset-0 w-full h-full object-cover parallax-img"

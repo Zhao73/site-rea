@@ -15,7 +15,7 @@ export function LocationSection() {
 
         <div className="reveal-up mt-12 sm:mt-16 mx-auto max-w-xl overflow-hidden shadow-[0_24px_60px_rgba(23,35,59,0.18)]">
           <img
-            src="/images/architecture-facade.webp"
+            src="./images/architecture-facade.webp"
             alt="Stepped limestone and cedar residences framed by garden greenery"
             loading="lazy"
             className="w-full h-64 sm:h-80 object-cover parallax-img hover:scale-105 transition-transform duration-700"
@@ -38,7 +38,7 @@ export function LocationSection() {
       {/* Full-bleed daylight pavilion quote frame */}
       <div className="relative h-[78vh] min-h-[540px] w-full overflow-hidden">
         <img
-          src="/images/hero-day.webp"
+          src="./images/hero-day.webp"
           alt="Kaze Sanctuary daylight reflecting pool and cedar pergola"
           loading="lazy"
           className="w-full h-full object-cover parallax-img"

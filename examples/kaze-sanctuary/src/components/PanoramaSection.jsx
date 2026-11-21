@@ -5,7 +5,7 @@ export function PanoramaSection() {
     <section className="relative w-full overflow-hidden bg-[#340c24]">
       <div className="relative h-[86vh] min-h-[580px] w-full overflow-hidden">
         <img
-          src="/images/kyoto-panorama.webp"
+          src="./images/kyoto-panorama.webp"
           alt="Aerial panorama of Arashiyama cedar mountains and emerald Katsura river in Kyoto"
           loading="lazy"
           className="w-full h-full object-cover parallax-img"

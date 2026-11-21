@@ -37,7 +37,7 @@ export function InteriorsSection({ onScrollTo }) {
               <BlossomCorner position="top-right" className="w-56 sm:w-72" />
               <div className="relative z-10 overflow-hidden aspect-[4/5]">
                 <img
-                  src="/images/courtyard-onsen.webp"
+                  src="./images/courtyard-onsen.webp"
                   alt="Private sunken limestone courtyard with Japanese maple"
                   loading="lazy"
                   className="w-full h-full object-cover"
@@ -61,7 +61,7 @@ export function InteriorsSection({ onScrollTo }) {
           <div className="lg:col-span-6 lg:col-start-7 space-y-10">
             <div className="overflow-hidden shadow-[0_24px_55px_rgba(23,35,59,0.12)]">
               <img
-                src="/images/terrace-sunlight.webp"
+                src="./images/terrace-sunlight.webp"
                 alt="Sun-drenched limestone veranda with dappled maple shadows"
                 loading="lazy"
                 className="w-full h-72 sm:h-[420px] object-cover parallax-img"

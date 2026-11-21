@@ -27,7 +27,7 @@ export function BlossomCorner({
       aria-hidden="true"
     >
       <img
-        src="/images/blossom-branch.webp"
+        src="./images/blossom-branch.webp"
         alt=""
         loading="lazy"
         decoding="async"

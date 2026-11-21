@@ -13,14 +13,14 @@ export function HeroSection({ ambiance, onOpenBooking, onScrollTo }) {
       {/* Crossfading Daylight & Twilight architectural photography */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-day.webp"
+          src="./images/hero-day.webp"
           alt="KAZE Sanctuary limestone and cedar pavilion in Arashiyama daylight"
           className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-out scale-[1.02] ${
             ambiance === "day" ? "opacity-100" : "opacity-0"
           }`}
         />
         <img
-          src="/images/hero-night.webp"
+          src="./images/hero-night.webp"
           alt="KAZE Sanctuary pavilion glowing at twilight beside turquoise thermal pool"
           className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-out scale-[1.02] ${
             ambiance === "night" ? "opacity-100" : "opacity-0"

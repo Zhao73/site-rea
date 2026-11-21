@@ -33,7 +33,7 @@ export const PAVILIONS = [
     summary:
       "Private sunken cedar courtyard, direct moss-garden access, and a dedicated mineral hot-spring bath.",
     cta: "EXPLORE GARDEN + ONSEN",
-    image: "/images/courtyard-onsen.webp",
+    image: "./images/courtyard-onsen.webp",
     orientation: "South-East Mountain View",
     terraceArea: "64 M² Private Courtyard",
     highlights: [
@@ -53,7 +53,7 @@ export const PAVILIONS = [
     summary:
       "Two serene levels connected by a floating oak staircase, framing framed views of bamboo canopies.",
     cta: "EXPLORE COURTYARD DUPLEX",
-    image: "/images/terrace-sunlight.webp",
+    image: "./images/terrace-sunlight.webp",
     orientation: "West River Horizon",
     terraceArea: "48 M² Shaded Pergola Terrace",
     highlights: [
@@ -73,7 +73,7 @@ export const PAVILIONS = [
     summary:
       "Elevated rooftop solarium with panoramic Arashiyama ridge vistas and outdoor fireplace lounge.",
     cta: "EXPLORE SKY PENTHOUSE",
-    image: "/images/interior-suite.webp",
+    image: "./images/interior-suite.webp",
     orientation: "270° Ridge Panorama",
     terraceArea: "92 M² Rooftop Solarium",
     highlights: [
@@ -133,19 +133,19 @@ export const INTERIOR_GALLERY = [
     id: "suite",
     title: "Primary Hinoki Suite",
     caption: "Lime-washed walls, low hinoki platform joinery, and seamless thresholds onto a private flowering dining terrace.",
-    image: "/images/interior-suite.webp",
+    image: "./images/interior-suite.webp",
   },
   {
     id: "terrace",
     title: "Sunlit Stone Veranda",
     caption: "Dappled morning light across hand-dressed travertine parapets and bespoke outdoor linen daybeds.",
-    image: "/images/terrace-sunlight.webp",
+    image: "./images/terrace-sunlight.webp",
   },
   {
     id: "courtyard",
     title: "Sunken Maple Courtyard",
     caption: "Quiet vertical stonework cradling a private garden alcove shielded from wind and city sound.",
-    image: "/images/courtyard-onsen.webp",
+    image: "./images/courtyard-onsen.webp",
   },
 ];
 
