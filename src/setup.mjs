@@ -59,9 +59,11 @@ export function installAntigravityPlugin() {
   };
   fs.writeFileSync(path.join(pluginDir, "mcp_config.json"), JSON.stringify(mcpConfig, null, 2) + "\n", "utf8");
 
-  const readmeSrc = path.join(PKG_ROOT, "README.md");
-  if (fs.existsSync(readmeSrc)) {
-    fs.copyFileSync(readmeSrc, path.join(pluginDir, "README.md"));
+  for (const name of ["README.md", "README.zh-CN.md"]) {
+    const readmeSrc = path.join(PKG_ROOT, name);
+    if (fs.existsSync(readmeSrc)) {
+      fs.copyFileSync(readmeSrc, path.join(pluginDir, name));
+    }
   }
 
   return {
