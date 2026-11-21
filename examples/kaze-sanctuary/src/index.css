@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --kaze-plum: #340c24;
+  --kaze-plum-deep: #240718;
+  --kaze-cream: #f3f3ec;
+  --kaze-sky: #b5cedb;
+  --kaze-navy: #17233b;
+  --kaze-white: #ffffff;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-script: "Pinyon Script", cursive;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--kaze-cream);
+  color: var(--kaze-navy);
+  scroll-behavior: auto;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-micro {
+  font-family: var(--font-sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Editorial arch geometry */
+.arch-top {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.dome-arch {
+  border-top-left-radius: 50% 420px;
+  border-top-right-radius: 50% 420px;
+}
+
+@media (max-width: 768px) {
+  .dome-arch {
+    border-top-left-radius: 50% 180px;
+    border-top-right-radius: 50% 180px;
+  }
+}
+
+/* Organic botanical breeze sway */
+@keyframes kaze-sway-a {
+  0%, 100% {
+    transform: rotate(0deg) translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: rotate(2.1deg) translate3d(6px, 4px, 0) scale(1.015);
+  }
+  66% {
+    transform: rotate(-1.6deg) translate3d(-4px, 2px, 0) scale(0.992);
+  }
+}
+
+@keyframes kaze-sway-b {
+  0%, 100% {
+    transform: scaleX(-1) rotate(0deg) translate3d(0, 0, 0);
+  }
+  45% {
+    transform: scaleX(-1) rotate(-2.4deg) translate3d(5px, -5px, 0);
+  }
+  78% {
+    transform: scaleX(-1) rotate(1.4deg) translate3d(-3px, 3px, 0);
+  }
+}
+
+.animate-sway-a {
+  transform-origin: 0% 0%;
+  animation: kaze-sway-a 9.5s ease-in-out infinite;
+}
+
+.animate-sway-b {
+  transform-origin: 100% 100%;
+  animation: kaze-sway-b 11s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+/* Subtle horizontal scroll bar hiding */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--kaze-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(23, 35, 59, 0.28);
+  border-radius: 999px;
+}

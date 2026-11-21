@@ -12,6 +12,10 @@ Three ways to use it: an MCP server (14 tools, for AI clients such as Claude Cod
 
 Each picture is the output of `verify`, taken with the internet cut off: the original site on the left, the pixel difference in the middle (grey = identical, red = differs), the offline replay on the right. The numbers under each picture are the measured similarity.
 
+**Creative secondary development (`era-residence.com` → [`examples/kaze-sanctuary`](examples/kaze-sanctuary))** — design tokens (`#340c24`, `#f3f3ec`, `#b5cedb`, `#17233b`), layout rhythm, and GSAP + Lenis scroll choreography extracted with Site-REA, then rebuilt from scratch into a **100% original React 19 + Tailwind + GSAP + Lenis codebase** with brand-new brand identity (**KAZE Sanctuary · Arashiyama, Kyoto**), newly authored copy & SVG crest, freshly generated WebP photography, and 6 new interactive modules (Day/Twilight hero switcher, architectural hotspots, 3-typology pavilion slider + floorplan drawer, clickable twilight amenity switcher, 3-slide interior gallery, and private viewing modal). Zero third-party assets or scripts copied.
+
+![Creative secondary development: era-residence.com reference vs KAZE Sanctuary 100% original rebuild](docs/showcase/era-secondary-dev.jpg)
+
 **three.js example** — a WebGL scene, replayed offline at 100%.
 
 ![three.js example: original, pixel difference, offline replay](docs/showcase/threejs.jpg)
@@ -21,7 +25,11 @@ Each picture is the output of `verify`, taken with the internet cut off: the ori
 ![corp.shiseido.com/jp: original, pixel difference, offline replay](docs/showcase/shiseido.jpg)
 
 <details>
-<summary>More: linear.app, lenis.dev, stripe.com, and where static output ends</summary>
+<summary>More: era-residence.com, linear.app, lenis.dev, stripe.com, and where static output ends</summary>
+
+**era-residence.com** — Webflow + GSAP ScrollTrigger + Lenis + 7 transparent-alpha looping flower videos (183 recorded responses, 0 missing). The red pixels in the hero come from Adobe Typekit fonts that failed during the initial live capture but loaded cleanly from the healed cache during offline replay.
+
+![era-residence.com: original, pixel difference, offline replay](docs/showcase/era-residence.jpg)
 
 **linear.app** — a Next.js single-page app, 588 recorded responses.
 
@@ -70,11 +78,13 @@ Measured on 2026-11-21 with the final code, always **with the internet cut off**
 | linear.app (Next.js SPA) | 588 | 100 / 100 / not sampled | 100 / 100 | 100 / 100 / not sampled | 0 |
 | lenis.dev (WebGL + smooth scroll, 37462 px tall) | 169 | 100 / 100 / 99.53 | 100 / 95.32 | 100 / 99.97 / 100 | 0 |
 | stripe.com (animated gradient hero, 683 requests) | 683 | 97.04 / 99.36 / 99.33 | 95.10 / 99.36 | 99.93 / 99.89 / 99.84 | 0 |
+| era-residence.com (Webflow + GSAP + Lenis + 7 alpha videos, 21908 px tall) | 183 | 97.89 / 83.18 / 81.32 | 95.25 / 43.33 | 97.89 / 83.18 / 79.57 | 0 |
 
 Notes:
 - Shiseido scores lower on the local server because its cookie-consent dialog lives in a third-party iframe, which the local server cannot take over (blocked and counted as 1 external request). Exact replay does not have this problem.
 - Stripe's scripts check their own hostname and report "hostname is not a recognized Stripe host" on `127.0.0.1`. Under exact replay there are no errors. The hero is below 100 because that gradient changes every frame.
 - lenis.dev looks identical, but during replay Next.js's prefetch logic throws one script error the original does not have (`t[Symbol.asyncIterator] is not a function`). The cause was not found; no visible effect was seen.
+- `era-residence.com` scores lower on pixel diff even though `offline.passed` is `true` with `0` unrecorded requests and all 7 full `.webm`/`.mov` videos cached: during the initial live capture Adobe Typekit fonts (`ambroise-francois-std`, `sloop-script-three`) failed to load in time, whereas the healed offline cache served them immediately on replay — shifting headings vertically (especially on mobile) and letting the opening arch preloader finish earlier at the 63%–100% scroll stops.
 - In short: **sites that depend on their own domain or embed third-party iframes need exact replay; for the rest either way works.**
 
 ### Static mirror and React project (no scripts)

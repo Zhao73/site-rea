@@ -14,6 +14,10 @@
 
 每张图都是 `verify` 断网验收的输出：左边是原站，中间是逐像素差异（灰色 = 相同，红色 = 不同），右边是离线回放。图下方的数字是实测相似度。
 
+**创作二次开发案例（`era-residence.com` → [`examples/kaze-sanctuary`](examples/kaze-sanctuary)）** —— 用 Site-REA 提取原站的设计基因（配色令牌 `#340c24` / `#f3f3ec` / `#b5cedb` / `#17233b`、版式节奏与 GSAP + Lenis 滚动编排），从零重写为 **100% 自有源码的 React 19 + Tailwind + GSAP + Lenis 独立网站**：全新品牌（**KAZE Sanctuary · 京都岚山**）、全部重写的文案与原创几何 SVG 徽章、全新生成的 8 张 WebP 视觉素材，并新增 6 项真实交互（昼/夜光影切换、建筑热点标注、3 户型交互滑块 + 户型抽屉、可点击暮色设施切换、室内画廊与预约表单弹窗），零拷贝原站脚本或素材。
+
+![创作二次开发对比：era-residence.com 参考原站与 KAZE Sanctuary 100% 原创源码重建](docs/showcase/era-secondary-dev.jpg)
+
 **three.js 示例** —— WebGL 场景，离线回放 100%。
 
 ![three.js 示例：原站、像素差异、离线回放](docs/showcase/threejs.jpg)
@@ -23,7 +27,11 @@
 ![资生堂企业站：原站、像素差异、离线回放](docs/showcase/shiseido.jpg)
 
 <details>
-<summary>更多：linear.app、lenis.dev、stripe.com，以及静态产物的边界</summary>
+<summary>更多：era-residence.com、linear.app、lenis.dev、stripe.com，以及静态产物的边界</summary>
+
+**era-residence.com** —— Webflow + GSAP ScrollTrigger + Lenis + 7 段透明通道循环花朵视频（录下 183 个响应、0 缺失）。首屏红色差异来自在线抓取时未加载成功的 Adobe Typekit 字体在离线回放时从缓存正常生效。
+
+![era-residence.com：原站、像素差异、离线回放](docs/showcase/era-residence.jpg)
 
 **linear.app** —— Next.js 单页应用，录下 588 个响应。
 
@@ -74,11 +82,13 @@
 | linear.app（Next.js 单页应用） | 588 | 100 / 100 / 未采样 | 100 / 100 | 100 / 100 / 未采样 | 0 |
 | lenis.dev（WebGL + 平滑滚动，页面高 37462px） | 169 | 100 / 100 / 99.53 | 100 / 95.32 | 100 / 99.97 / 100 | 0 |
 | stripe.com（动态渐变首屏，683 个请求） | 683 | 97.04 / 99.36 / 99.33 | 95.10 / 99.36 | 99.93 / 99.89 / 99.84 | 0 |
+| era-residence.com（Webflow + GSAP + Lenis + 7 段透明视频，高 21908px） | 183 | 97.89 / 83.18 / 81.32 | 95.25 / 43.33 | 97.89 / 83.18 / 79.57 | 0 |
 
 说明：
 - 资生堂在"本机服务器"下分数低，是因为它的 Cookie 同意弹窗放在第三方 iframe 里，本机服务器接管不了别的域名的 iframe（被拦下并记了 1 次外网请求）。精确回放没有这个问题。
 - Stripe 的脚本会检查自己的域名，在 `127.0.0.1` 上会报 "hostname is not a recognized Stripe host"。精确回放下没有任何错误。首屏不到 100 是因为那块渐变动画每一帧都在变。
 - lenis.dev 画面一致，但回放时 Next.js 的预取逻辑多报了一个原站没有的脚本错误（`t[Symbol.asyncIterator] is not a function`），原因没查明，肉眼没看到影响。
+- `era-residence.com` 的断网验收 `offline.passed` 为 `true`（0 缺失请求，7 段完整 `.webm`/`.mov` 视频全部入库），但逐像素分数偏低：在线抓取拍基准图时 Adobe Typekit 字体（`ambroise-francois-std`、`sloop-script-three`）连接被拒回退成宽无衬线体，而离线回放时缓存补抓的真实字体即时加载，导致段落更紧凑引发整页纵向偏移（手机端最明显），且本地零延迟让开场拱门遮罩在 63%–100% 滚动位更早打开。
 - 结论：**依赖自己域名或嵌了第三方 iframe 的网站，用精确回放；其余两种方式都可以。**
 
 ### 静态镜像与 React 工程（不带脚本）
