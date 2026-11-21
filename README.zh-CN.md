@@ -10,6 +10,41 @@
 
 ---
 
+## 对比案例
+
+每张图都是 `verify` 断网验收的输出：左边是原站，中间是逐像素差异（灰色 = 相同，红色 = 不同），右边是离线回放。图下方的数字是实测相似度。
+
+**three.js 示例** —— WebGL 场景，离线回放 100%。
+
+![three.js 示例：原站、像素差异、离线回放](docs/showcase/threejs.jpg)
+
+**corp.shiseido.com/jp** —— 带随机排序轮播的企业站。首屏和页面中段各一组。
+
+![资生堂企业站：原站、像素差异、离线回放](docs/showcase/shiseido.jpg)
+
+<details>
+<summary>更多：linear.app、lenis.dev、stripe.com，以及静态产物的边界</summary>
+
+**linear.app** —— Next.js 单页应用，录下 588 个响应。
+
+![linear.app：原站、像素差异、离线回放](docs/showcase/linear.jpg)
+
+**lenis.dev** —— WebGL 加平滑滚动。
+
+![lenis.dev：原站、像素差异、离线回放](docs/showcase/lenis.jpg)
+
+**stripe.com** —— 不到 100%：首屏那块渐变动画每一帧都不一样，红色部分就是它。
+
+![stripe.com：原站、像素差异、离线回放](docs/showcase/stripe.jpg)
+
+**静态产物的边界** —— 同一个 lenis.dev 页面转成不带脚本的 React 工程。标记和样式都在；由页面脚本做动画显示出来的标题、按钮和 WebGL 场景没有。
+
+![lenis.dev 的 React 构建：原站、像素差异、构建结果](docs/showcase/lenis-react-limit.jpg)
+
+</details>
+
+截图里是第三方网站，仅用于演示本工具；这些网站及其内容归各自所有者。
+
 ## 它能产出什么
 
 | 产出 | 是什么 | 交互 | 适合 |

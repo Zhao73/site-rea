@@ -8,6 +8,41 @@ Three ways to use it: an MCP server (14 tools, for AI clients such as Claude Cod
 
 > Every capability below comes with measured numbers. What it cannot do has its own section.
 
+## Showcase
+
+Each picture is the output of `verify`, taken with the internet cut off: the original site on the left, the pixel difference in the middle (grey = identical, red = differs), the offline replay on the right. The numbers under each picture are the measured similarity.
+
+**three.js example** — a WebGL scene, replayed offline at 100%.
+
+![three.js example: original, pixel difference, offline replay](docs/showcase/threejs.jpg)
+
+**corp.shiseido.com/jp** — a corporate site with randomly ordered carousels. Hero and a mid-page scroll stop.
+
+![corp.shiseido.com/jp: original, pixel difference, offline replay](docs/showcase/shiseido.jpg)
+
+<details>
+<summary>More: linear.app, lenis.dev, stripe.com, and where static output ends</summary>
+
+**linear.app** — a Next.js single-page app, 588 recorded responses.
+
+![linear.app: original, pixel difference, offline replay](docs/showcase/linear.jpg)
+
+**lenis.dev** — WebGL with smooth scrolling.
+
+![lenis.dev: original, pixel difference, offline replay](docs/showcase/lenis.jpg)
+
+**stripe.com** — not 100%: the animated gradient in the hero is different on every frame, and that is what shows up in red.
+
+![stripe.com: original, pixel difference, offline replay](docs/showcase/stripe.jpg)
+
+**Where static output ends** — the same lenis.dev page as a React project without scripts. The markup and CSS are there; the title, the buttons and the WebGL scene, which the page's scripts animate in, are not.
+
+![lenis.dev as a React build: original, pixel difference, build](docs/showcase/lenis-react-limit.jpg)
+
+</details>
+
+The screenshots show third-party websites for the purpose of demonstrating the tool; the sites and their content belong to their owners.
+
 ## What it produces
 
 | Output | What it is | Behaviour | Good for |
