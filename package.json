@@ -1,0 +1,63 @@
+{
+  "name": "site-rea",
+  "version": "1.0.0",
+  "description": "Site-REA — capture a website into an evidence directory, replay it offline (runtime mirror), turn it into static / React projects, and verify the result against the original with the internet cut off. MCP server, CLI and Antigravity plugin.",
+  "type": "module",
+  "bin": {
+    "site-rea": "./bin/site-rea.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zhao73/site-rea.git"
+  },
+  "homepage": "https://github.com/Zhao73/site-rea",
+  "scripts": {
+    "install:plugin": "node ./bin/site-rea.mjs install",
+    "mcp": "node ./bin/site-rea.mjs mcp",
+    "doctor": "node ./bin/site-rea.mjs doctor",
+    "test:smoke": "node ./tests/smoke.test.mjs",
+    "test:advanced": "node ./tests/advanced.test.mjs",
+    "test": "node ./tests/smoke.test.mjs && node ./tests/advanced.test.mjs && node ./tests/mirror.test.mjs",
+    "test:mirror": "node ./tests/mirror.test.mjs"
+  },
+  "keywords": [
+    "rea",
+    "mcp",
+    "website-cloner",
+    "reverse-engineering",
+    "webgpu",
+    "threejs",
+    "webgl",
+    "scroll-scrub",
+    "runtime-mirror",
+    "mock-backend",
+    "design-tokens",
+    "playwright",
+    "antigravity"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "parse5": "^7.3.0",
+    "pixelmatch": "^7.1.0",
+    "playwright-core": "^1.52.0",
+    "pngjs": "^7.0.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "files": [
+    "bin",
+    "src",
+    "plugin",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

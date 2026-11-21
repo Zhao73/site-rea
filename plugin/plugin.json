@@ -1,0 +1,14 @@
+{
+  "name": "site-rea",
+  "displayName": "Site REA — 一键复制网站",
+  "description": "Capture a website into an evidence directory, replay it offline as a runtime mirror (original scripts running against recorded responses), turn it into a static or React project, and verify the result against the original with the internet cut off.",
+  "version": "1.0.0",
+  "logo": "assets/logo.svg",
+  "repository": "https://github.com/Zhao73/site-rea",
+  "homepage": "https://github.com/Zhao73/site-rea",
+  "suggestedPrompts": [
+    "把这个网站完整录下来，在本机离线原样运行，并告诉我验收结果：https://example.com",
+    "把这个网站转成按区块拆好的 React 工程，我要接着改：https://example.com",
+    "抓取这个网站的配色、字体、素材和分区截图，给改版做参考：https://example.com"
+  ]
+}
